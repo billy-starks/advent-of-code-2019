@@ -1,0 +1,4 @@
+def main1():
+    pass
+
+print(main1())

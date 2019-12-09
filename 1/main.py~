@@ -1,0 +1,9 @@
+def calculate_fuel(mass):
+    from math import floor
+    return floor(mass / 3) - 2
+
+with open("./input", 'r') as file:
+    sum = 0
+    for mass in map(int, file.readlines()):
+        sum += calculate_fuel(mass)
+    print(sum)

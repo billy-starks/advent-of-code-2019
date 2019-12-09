@@ -1,0 +1,5 @@
+def load_program(input):
+    with open(input, 'r') as file:
+        data = file.read()
+        data = data.split()
+        return data
