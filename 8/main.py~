@@ -1,0 +1,8 @@
+def main1():
+    WIDTH = 25
+    HEIGHT = 6
+    LAYER = WIDTH * HEIGHT
+    data = ""
+    with open('input', 'r') as file:
+        data = file.read()
+    data[0
