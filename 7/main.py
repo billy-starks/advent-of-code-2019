@@ -16,17 +16,17 @@ class AmpSystem:
         self._reset()
         phases = [a,b,c,d,e]
         self.amps[0].run_program(phases[0], 0)
-        lastOut = self.amps[0].read_output()
+        lastOut = self.amps[0].read_output()[-1]
         currentAmp = 1
         while currentAmp != 0:
             self.amps[currentAmp].run_program(phases[currentAmp], lastOut)
-            lastOut = self.amps[currentAmp].read_output()
+            lastOut = self.amps[currentAmp].read_output()[-1]
             currentAmp = (currentAmp + 1) % 5
             
         while not self.amps[currentAmp].halted():
             self.amps[currentAmp].push_input(lastOut)
             self.amps[currentAmp].run_program()
-            lastOut = self.amps[currentAmp].read_output()
+            lastOut = self.amps[currentAmp].read_output()[-1]
             currentAmp = (currentAmp + 1) % 5
 
         return lastOut

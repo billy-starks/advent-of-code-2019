@@ -1,0 +1,9 @@
+from intcode import IntCode
+
+def main1():
+    interpreter = IntCode()
+    interpreter.load_program('input')
+    interpreter.run_program(1)
+    return interpreter.read_output()
+
+print(main1())
